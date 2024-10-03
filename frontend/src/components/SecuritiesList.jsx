@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { DataGrid } from '@mui/x-data-grid';
+import Paper from '@mui/material/Paper';
 import StockService from '../services/StockService';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function SecuritiesList() {
     const [securities, setSecurities] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStocks = async () => {
@@ -21,23 +24,36 @@ function SecuritiesList() {
         fetchStocks();
     }, []);
 
+    const columns = [
+        { field: 'ticker', headerName: 'Symbol', width: 130 },
+        { field: 'securityname', headerName: 'Name', width: 130 },
+        { field: 'sector', headerName: 'Sector', width: 130 },
+        { field: 'country', headerName: 'Country', width: 130 },
+        { field: 'trend', headerName: 'Trend', width: 130 },
+    ];
+
+    const paginationModel = { page: 0, pageSize: 5 };
+
     if (loading) {
         return <div>Loading...</div>;
     }
 
+    const handleRowClick = (params) => {
+        navigate(`/securities/${params.row.ticker}`);
+    console.log( `${params.row.ticker}`)
+  };
+
     return (
-        <div>
-            <h1>Securities List</h1>
-            <ul>
-                {securities.map((security) => (
-                    <li key={security.ticker}>
-                        <Link to={`/securities/${security.ticker}`}>
-                            {security.securityname} - {security.sector}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <Paper sx={{ height: 400, width: '100%' }}>
+            <DataGrid
+                rows={securities}
+                columns={columns}
+                initialState={{ pagination: { paginationModel } }}
+                pageSizeOptions={[5, 10]}
+                sx={{ border: 0 }}
+                onRowClick={handleRowClick}
+            />
+        </Paper>
     );
 };
 
