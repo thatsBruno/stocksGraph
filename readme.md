@@ -51,4 +51,4 @@ GET http://localhost:3001/api/stocks/ticker/:ticker
 
 # Frontend
 
-To start run `npm start`
+To start run `npm i` then `npm start`
