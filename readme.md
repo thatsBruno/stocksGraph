@@ -49,6 +49,10 @@ GET http://localhost:3001/api/stocks
 GET http://localhost:3001/api/stocks/ticker/:ticker
 ```
 
+![api](https://github.com/user-attachments/assets/0cdfab1b-a852-404e-a4ae-24636e687d72)
+
 # Frontend
 
 To start run `npm i` then `npm start`
+
+![ui](https://github.com/user-attachments/assets/2eaf2ccd-23f8-4ff8-890c-a5b4b8e2c7bc)
