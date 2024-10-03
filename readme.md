@@ -1,8 +1,9 @@
+## Backend
 Run the BE with `node app.js`
-No .gitingnore was used on purpose.
+- No .gitingnore was used on purpose.
 
 
-- Database cmds 
+## Database cmds 
 
 ```powershell
 docker pull postgres
@@ -11,12 +12,13 @@ docker run --name postgresdb   -e POSTGRES_USER=myuser   -e POSTGRES_PASSWORD=my
  
  ```
 
-- Database 
-`http://localhost:80` adminpg
-User: user@domain.com
-Pass: admin
+## Database 
+- `http://localhost:80` adminpg
+- User: `user@domain.com`
+- Pass: `admin`
+- Populated through the seed.sql on adminpg
 
-- Schema 
+## Schema 
 
 ```javascript
   ticker: "string",
@@ -30,7 +32,7 @@ Pass: admin
     ]
 ```
 
-- Endpoints
+## Endpoints
 
 ```powershell
 GET http://localhost:3000/api/stocks

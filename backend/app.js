@@ -1,10 +1,9 @@
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config(); 
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const stockRoutes = require('./routes/stocksRoute'); // Import the routes
+const stockRoutes = require('./routes/stocksRoute'); 
 
-// Create an instance of Express
 const port = process.env.PORT || 3000;
 app.use(require("./routes/stocksRoute"));
 app.use(express.json());
