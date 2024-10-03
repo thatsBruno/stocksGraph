@@ -8,7 +8,7 @@ router.get('/stocks', async (req, res) => {
     if (result.rows.length === 0) {
       return res.status(404).send('Stock not found'); // Handle case where stock doesn't exist
     }
-    res.json(result.rows[0]); // Return the stock data
+    res.json(result.rows); // Return the stock data
   } catch (err) {
     console.error('Error executing query', err.stack);
     res.status(500).send('Database query failed'); // Handle database errors
@@ -29,14 +29,5 @@ router.get('/stocks/ticker/:ticker', async (req, res) => {
   }
 });
 
-// router.get('/stocks', async (req, res) => {
-//   try {
-//     const result = await client.query('SELECT * FROM stocks');
-//     res.json(result.rows);
-//   } catch (err) {
-//     console.error('Error executing query', err.stack);
-//     res.status(500).send('Database query failed');
-//   }
-// });
 
 module.exports = router;

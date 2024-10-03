@@ -1,4 +1,5 @@
 Run the BE with `node app.js`
+No .gitingnore was used on purpose.
 
 
 - Database cmds 
@@ -33,6 +34,6 @@ Pass: admin
 
 ```powershell
 GET http://localhost:3000/api/stocks
-GET http://localhost:3000/api/stocks/:id
+GET http://localhost:3000/api/stocks/ticker/:ticker
 ```
 
