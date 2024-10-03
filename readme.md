@@ -18,6 +18,9 @@ docker run --name postgresdb   -e POSTGRES_USER=myuser   -e POSTGRES_PASSWORD=my
 - Pass: `admin`
 - Populated through the seed.sql on adminpg
 
+![Untitled](https://github.com/user-attachments/assets/4fc6aba9-e9cf-4604-b2c0-fea1b393542b)
+
+
 ## Schema 
 
 ```javascript
