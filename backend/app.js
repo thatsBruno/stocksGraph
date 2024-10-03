@@ -4,13 +4,12 @@ const app = express();
 const cors = require('cors');
 const stockRoutes = require('./routes/stocksRoute'); 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
+app.use(cors());
 app.use(require("./routes/stocksRoute"));
 app.use(express.json());
 app.use('/api', stockRoutes);
 
-
-app.use(cors());
 
 // Start the Express server
 app.listen(port, () => {

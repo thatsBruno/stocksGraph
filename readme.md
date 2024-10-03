@@ -1,4 +1,4 @@
-## Backend
+# Backend
 Run the BE with `node app.js`
 - No .gitingnore was used on purpose.
 
@@ -45,7 +45,10 @@ docker run -p 80:80 \
 ## Endpoints
 
 ```powershell
-GET http://localhost:3000/api/stocks
-GET http://localhost:3000/api/stocks/ticker/:ticker
+GET http://localhost:3001/api/stocks
+GET http://localhost:3001/api/stocks/ticker/:ticker
 ```
 
+# Frontend
+
+To start run `npm start`
