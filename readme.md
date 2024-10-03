@@ -55,4 +55,8 @@ GET http://localhost:3001/api/stocks/ticker/:ticker
 
 To start run `npm i` then `npm start`
 
+- Routes
+- `/securities`
+- `/securities/:ticker`
+
 ![ui](https://github.com/user-attachments/assets/2eaf2ccd-23f8-4ff8-890c-a5b4b8e2c7bc)
