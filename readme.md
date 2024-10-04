@@ -59,4 +59,4 @@ To start run `npm i` then `npm start`
 - `/securities`
 - `/securities/:ticker`
 
-![ui](https://github.com/user-attachments/assets/2eaf2ccd-23f8-4ff8-890c-a5b4b8e2c7bc)
+![ezgif-1-9f1eb6ecd4](https://github.com/user-attachments/assets/c1650a28-650d-4c01-b24d-2c9aa1ae6cf9)
