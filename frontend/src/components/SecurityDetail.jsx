@@ -3,12 +3,17 @@ import StockService from '../services/StockService';
 import { useParams } from 'react-router-dom';
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import './security-detail.css';
+import { useNavigate } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 function SecurityDetail() {
     const [security, setSecurity] = useState(null);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStock = async () => {
@@ -31,6 +36,10 @@ function SecurityDetail() {
 
     if (!security) {
         return <div>Security not found!</div>;
+    }
+
+    function handleClick() {
+        navigate(-1)
     }
 
     // chart
@@ -65,24 +74,29 @@ function SecurityDetail() {
             name: 'Close Price',
             type: 'line',
             data: chartData.map(data => data.close),
-        }, 
+        },
         {
             name: 'Volume',
             type: 'line',
             data: chartData.map(data => data.volume),
             yAxis: 1,
         }],
-    }; 
+    };
 
     return (
         <>
-            <div>
-                <h1>{security.ticker} - {security.securityname}
-                </h1>
+            {/* <div className="backBtn">
+                <IconButton onClick={handleClick} size="small">
+                    <ArrowBackIcon size="large" />
+                </IconButton>
+            </div> */}
+            <div className='header'>
+                <h1>Securities</h1>
+                <p>{security.ticker} - {security.securityname}</p>
                 <p><strong>Sector:</strong> {security.sector}</p>
                 <p><strong>Country:</strong> {security.country}</p>
             </div>
-            <div>
+            <div className='container'>
                 <HighchartsReact
                     highcharts={Highcharts}
                     options={options}

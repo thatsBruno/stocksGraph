@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(211, 204, 204);
+}
+
+.backBtn {
+    margin: 1rem 0 0 2rem;
+}
+
+.header {
+    margin: 2rem;
+}
+
+.container {
+    margin: 5rem 2rem;
+}

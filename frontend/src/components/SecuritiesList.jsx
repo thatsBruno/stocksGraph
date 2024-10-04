@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
 import StockService from '../services/StockService';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './securities-list.css';
 
 function SecuritiesList() {
     const [securities, setSecurities] = useState([]);
@@ -40,20 +41,27 @@ function SecuritiesList() {
 
     const handleRowClick = (params) => {
         navigate(`/securities/${params.row.ticker}`);
-    console.log( `${params.row.ticker}`)
-  };
+        console.log(`${params.row.ticker}`)
+    };
 
     return (
-        <Paper sx={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={securities}
-                columns={columns}
-                initialState={{ pagination: { paginationModel } }}
-                pageSizeOptions={[5, 10]}
-                sx={{ border: 0 }}
-                onRowClick={handleRowClick}
-            />
-        </Paper>
+        <>
+        <div className='header'>
+            <h1>Securities</h1>
+        </div>
+        <div className="container">
+            <Paper sx={{ height: 400, width: '100%' }}>
+                <DataGrid
+                    rows={securities}
+                    columns={columns}
+                    initialState={{ pagination: { paginationModel } }}
+                    pageSizeOptions={[5, 10]}
+                    sx={{ border: 0 }}
+                    onRowClick={handleRowClick}
+                />
+            </Paper>
+        </div>
+        </>
     );
 };
 
